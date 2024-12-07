@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Forex</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(Inte.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+legend{
+    font-family: 'Barrio';font-size: 22px; 
+    margin-bottom: -70px;  
+    align-items: center;
+    justify-content: center; 
+    margin-top: 40px;
+    margin-left: 80px;  
+}
+fieldset{
+
+    border: none;
+    margin:0 auto;
+    padding: 50px;
+    box-shadow: 2px 2px 15px black;
+    backdrop-filter: blur(10px);
+    margin-top: 80px;
+    
+}
+label,input{
+    font-size: larger;
+    font-family:'Times New Roman';
+    font-weight: bold;
+    margin:10px;
+    justify-content: center;
+}
+form{
+    margin:auto;
+    width: 300px;
+}
+.rst{
+    display: inline-block;
+}
+.sbmt{
+    display: inline-block;
+    width: 500px;
+}
+button{
+    size: 100px; 
+    margin: 20px;
+}
+
+
+    </style>
+</head>
+
+<body>
+<form action="login.html" onsubmit="return submitted(event)">
+    <legend align="center">Registration Page</legend>
+    <fieldset>
+       
+        <label for="Username">Username</label>
+        <input type="text" id="username">
+        <br>
+        <label for="Dob">Dob</label>
+        <input type="date" id="dob"><br>
+        <label for="email">Email</label>
+        <input type="text" id="email">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" id="password">
+        <br>
+        <div>
+        <button type="reset" id="rst">Reset </button>
+        <button type="submit" id="button">Login</button></div>
+    </fieldset>
+</form>
+<script>
+    
+
+function submitted(event){
+    
+    event.preventDefault();
+    
+
+    
+    console.log("hiiii")
+   
+    const usr=document.getElementById("username").value.trim();
+    const pass=document.getElementById("password").value.trim();
+    const dob=document.getElementById("dob").value.trim();
+    const email=document.getElementById("email").value.trim();;
+    const data={
+        username:usr,
+        password:pass,
+        Dob:dob,
+        Email:email
+    };
+    console.log("new user data",data);
+    addUser(data);
+    function addUser(data){
+        let userList=localStorage.getItem("users");
+        userList=userList?JSON.parse(userList):[];
+        userList.push(data);
+        localStorage.setItem("users",JSON.stringify(userList));
+        console.log("updated list",JSON.parse(localStorage.getItem("users"))) 
+    }
+    
+    console.log(data)
+    if(usr==""){
+        alert("Enter userName");
+        document.getElementById("username").focus();
+        return false;
+    }else if(pass==""){
+        alert("Enter Password");
+        document.getElementById("password").focus();
+        return false;
+    }else{
+        alert("Registered succesfullyy....")
+        window.location.href = "login.html"; 
+        return true;
+    }
+
+}
+
+</script>
+</body>
+</html>

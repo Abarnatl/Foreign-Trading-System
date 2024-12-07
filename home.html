@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="container">
+     <div id="id1">   <img id="logo" src="forex.avif" style="width:70px;height:70px;" alt=""></div>
+      <div class="cls" >  <a class="nav" href="">Home</a> </div>
+      <div class="cls">  <a class="nav" href="trading.html">Trading  </a> </div>
+      <div class="cls">  <a class="nav" href=""> Education</a> </div>
+      <div class="cls">  <a class="nav" href="aboutus.html">About us</a></div>
+      <div class="cls">  <a class="nav" href="">Market status</a></div>
+      <search><div class="cls"> <input type="text" id="inp" placeholder="search" > </div></search>
+    </div>
+    
+<h3 class="clsbtn"><pre> 
+    Click below to Start Trading
+</pre></h3>
+         <div id="logbtn">
+ <a id="btn1"  href="login.html"><button id="btn">Login</button></a></div>
+    <br><br><br><br><br><br><br>
+ 
+ <div> 
+    <pre>
+    <marquee behavior="" direction="right">!!!  Foreign  Trading    System           !!!</marquee></pre>
+    <span id="pg"><h2 style="color: blue;font-size:30px; " ref-text="Foreign Trading System" >Foreign Trading System</h2> <pre>  
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+Vero sunt veritatis facere praesentium magni, minus ea 
+cum dignissimos quia, voluptatem, 
+cupiditate quo possimus repellendus iusto! 
+Delectus aut illo provident odit?
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Ea sequi mollitia corrupti rem! Beatae ipsa soluta eos?
+ Aspernatur aliquid dolor soluta
+repellendus odit quas dolorem vel. 
+Rerum eveniet distinctio perspiciatis?</pre></span></div>
+    <div class="cont1">
+        <div class="row">
+        <img class="imgs" width="200px" height="200px" src="forex.avif" alt="">
+        <a href="aboutus.html"><img class="imgs" src="download.png" alt="About us"></a>
+        <img class="imgs" src="cus.png" alt=""></div></div>
+        <div class="hd"><div class="ti" >Forex</div>
+        <div class="ti"> About us</div>
+        <div class="ti">Contact</div></div>
+        <div class="hd"><div class="ti1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum itaque iusto sint pariatur, enim a, est eum vero voluptate doloremque laudantium. Tenetur velit incidunt nulla eos molestiae rerum, tempore libero?</div>
+        <div class="ti1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro accusantium recusandae eius fugit neque magni ullam saepe nihil, nulla soluta repellat, ducimus molestias eaque vero atque. Consequatur error rerum tenetur?</div>
+        <div class="ti1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos molestias aperiam sequi veritatis doloremque ducimus officia qui beatae architecto ex? Ipsum doloremque ut, vitae accusantium quae dolores inventore quia illo.</div></div>
+        <div class="hd"><div class="ti2" ><button>Read more</button></div>
+        <div class="ti2"><button >Read more</button></div>
+        <div class="ti2"><button>Contact us</button></div></div>
+        <br><br>
+ <div class="footer">
+    <div style="width: 400px;">contact details 
+        <ul>
+            <li>Mail : contact@gmail.com</li>
+            <li>Phn no : 1234567890</li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="">Telegram</a></li>
+            <li><a href="">Whatsapp group</a></li>
+        </ul>
+
+    </div>
+    <div style="width: 400px;">I would like to
+        <ul>
+            <li>Compare Accounts</li>
+            <li>Compare Platforms</li>
+            <li><a href=""> Withdraw Funds</a></li>
+            <li><a href="">Download Platforms</a></li>
+            <li><a href="">Download TradingView</a></li>
+        </ul>
+    </div>
+    <div style="width: 400px;">Support
+        <ul>
+   <li><a href=""> Contact us</a></li>
+   <li><a href=""> Support portal</a></li>
+    <li><a href="">Z-Connect blog</a></li>
+   <li><a href=""> List of charges</a></li>
+    <li><a href="">Downloads & resources</a></li>
+   <li><a href=""> Videos</a></li>
+   <li><a href=""> Market overview</a></li>
+    <li><a href="">How to file a complaint?</a></li>
+    <li><a href="">Status of your complaints</a></li>
+    </ul></div>
+ </div>
+ <script defer>
+    window.onload=function(){
+        if(sessionStorage.getItem("isLoggedIn")==="true"){
+            const btncontainer=document.getElementById("logbtn");
+            console.log("User logged in....")
+            btncontainer.innerHTML='<a id="btn1"style="color: rgb(5, 94, 94);"  href="products.html"><button id="btn">Invest now</button></a>';
+        }
+    }
+ </script>
+</body>
+</html>

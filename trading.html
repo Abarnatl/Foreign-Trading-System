@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading</title>
+    <style>
+        body{
+            background-image: url(curpair.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+           /* background-color: blue; */
+            background-blend-mode: lighten;
+            background-attachment: scroll;
+            background-size: 100% 140vh;
+        }
+        .container{
+        height: 150px;
+        width:100%;
+        background-color: rgb(14, 142, 125);
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #str{
+        background-color: rgb(14, 142, 125);
+        border: none;
+        border-radius: 23px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        backdrop-filter: blur(20px);
+        
+    }#str:hover{
+        border: 10px;
+        background-color: rgb(5, 183, 168);
+    }
+    .container .cls{
+        height: 10px;
+        
+        padding-left: 35px;
+        padding-top: 60px;
+        font-size: 20px;
+        font-family: 'Times New Roman';
+        padding-right: 40px;
+        font-weight: bold;
+        color: white;
+        
+        
+    }label,select,input{
+        font-size: 20px;
+
+    }
+    #id1{
+        padding: 40px;
+        align-self: center;
+    }
+    .nav{
+        text-decoration: none;
+    color: rgb(252, 252, 252);
+}
+.nav:hover{
+    color: red;
+    
+}
+table{
+    padding-left: 300px;
+}
+table,th,td{
+    border-collapse: collapse;
+    background-color: rgba(254, 254, 255, 0.24);
+    color: rgb(46, 3, 87);
+    font-size: 30px;
+    padding: 20px;
+}
+th{
+    background-color: rgb(1, 1, 32);
+    color: blueviolet;
+}
+.tab{
+    align-items: center;
+    justify-content: center;
+    text-align: center;   
+}
+#tabl{
+    padding-left: 250px;
+}
+button{
+   font-size: 30px;
+   margin: 30px;
+   background-color: rgba(64, 64, 238, 0.493);
+}button:hover{
+    background-color: red;
+}
+
+</style>
+</head>
+<body>
+    <!-- <script>
+        function convert(){
+            var am=document.getElementById('amount').value;
+            var fr=document.getElementById('fromcurrency').value;
+            var to=document.getElementById('tocurrency').value;
+            document.getElementById('textError').innerText = '';
+            if(!am||isNaN(am)){
+                document.getElementById('textError').innerText = 'This field is required.';
+                return;
+            }
+ 
+        }
+    </script> -->
+   
+    <div class="container">
+        <div id="id1">   <img id="logo" src="forex.avif" style="width:70px;height:70px;" alt=""></div>
+         <div class="cls" >  <a class="nav" href="home.html">Home</a> </div>
+         <div class="cls">  <a class="nav" href="">Trading  </a> </div>
+         <div class="cls">  <a class="nav" href=""> Education</a> </div>
+         <div class="cls">  <a class="nav" href="">About us</a></div>
+         <div class="cls">  <a class="nav" href="">Market status</a></div>
+         <search><div class="cls"> <input type="text" id="inp" placeholder="Search"> </div></search>
+       </div>
+       <div class="tab">
+       <h2>CURRENCY PAIRS</h2></div>
+       <div id="tabl">
+        <table border="2px">
+            <tr><th>Major trading pairs</th>
+            <th>Country</th>
+            <th>NickName</th></tr>
+            <tr><td>EUR/USD  </td>
+            <td>Eurozone/USA</td>
+            <td>Fiber/Greenback or Buck</td></tr>
+            <tr><td>USD/JPY  </td>
+            <td>USA/Japan</td>
+            <td>Buck/No nickname</td></tr>
+            <tr><td>GBP/USD</td>
+                <td>Great Britain/USA </td> <td>Cable/Buck</td></tr>
+            <tr><td>USD/CAD</td>
+            <td> USA/Canada</td>
+            <td> Buck/Loonie</td></tr>
+            <tr><td>AUD/USD  </td>
+            <td>Australia/USA</td>
+            <td>Aussie/Buck</td></tr>
+            <tr><td>NZD/USD </td>
+            <td> New Zealand/USA</td>
+            <td>Kiwi/Buck</td></tr>
+        </table>
+        
+    </div><br><br><br><br><br><br><br><center>
+        <a href="products.html">
+        <button id="str"> Start trading -></button></a><h1 style="color: rgb(5, 94, 94);">CHECK THE VALUE OF YOUR CURRENCY</h1>
+    <fieldset style="width: 50%;margin-top:80px;">
+    <div style="background-color: white;">
+        <h1>Currency Converter</h1>
+    <input type="number" id="amount" placeholder="Amount" />
+    <!-- <h5 id="textError" class="error"></h5> -->
+    <label for="fromCurrency">From:</label>
+    <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="EUR">JPY</option>
+        <option value="GBP">AUD</option>
+     </select> <!--<span id="fromError" class="error"></span> -->
+
+    <label for="toCurrency">To:</label>
+    <select id="toCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="EUR">JPY</option>
+        <option value="GBP">AUD</option>
+    </select> 
+    <!-- <h6 id="toError" class="error"></h6><br> -->
+<!-- <br><div id="textError" class="error"></div> -->
+<h2 style="color: rgb(0, 0, 0);" id="demo2"></h2>
+<h4 style="color: red;" id="demo"></h4>
+
+    <button onclick="convert()">Convert</button>
+    
+    <!-- <p id="result"></p> -->
+    </div></fieldset></center>
+    <br><br>
+    <script>
+        
+    function convert(){
+        const rates = {
+            'USD': 1,
+            'EUR': 0.85,
+            'JPY': 110.53,
+            'GBP': 0.75,
+            'AUD': 1.35
+        };
+        var amt = document.getElementById("amount").value;
+        var to = document.getElementById("toCurrency").value;
+        var from = document.getElementById("fromCurrency").value;
+        document.getElementById("demo").innerHTML ="";
+        document.getElementById("demo2").innerHTML ="";
+
+        if (amt =="") {
+            document.getElementById("demo").innerHTML = "! Please enter the amount";
+            
+        }else{ 
+            var res=(amt/rates[from]) * rates[to];
+          
+            document.getElementById("demo2").innerHTML = "The " + amt + " " + from + " is equal to " + res.toFixed(2) + " " + to;
+        }
+    }   
+    </script>
+    
+
+</body>
+</html>

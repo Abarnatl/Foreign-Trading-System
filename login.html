@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(forex.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+            
+            
+        }
+        fieldset{
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin-top:100px;
+            border: none;
+            box-shadow: 2px 3px 10px black;
+           
+        }
+        label,input{
+            padding: 5px;
+            width: 300px;
+            text-align: center;
+            margin: 10px;
+            font-size: 15px;
+        }
+        button{
+            width: 50%;
+            padding: 7px;
+            background-color: rgb(6, 246, 190);
+            margin: 30px;
+        }
+        #sign{
+            
+            margin-left: -15px;
+            color:rgb(6, 246, 190); ;
+        }
+        legend{
+            font-family: 'Barrio';font-size: 22px; 
+        margin-bottom: -80px;  
+    align-items: center;
+justify-content: center; 
+margin-top: 100px;
+margin-left: 150px;    }
+    </style>
+
+</head>
+<body>
+    <form name="myform" action="home.html " onsubmit="return validate();" >
+        <legend style="font-size: 20px;">LOGIN</legend>
+        <fieldset>
+            
+            <label for="">Username</label>
+            <input name="uname" type="text" id="uname">
+            <label for="">Password</label>
+            <input name="pass" type="password" id="pass">
+            <button type="submit">Login</button><br>
+            <label for="newUser">New User</label>
+            <a id="sign" href="Register.html">Sign up</a>
+
+        </fieldset>
+    </form>
+    <script>
+        function validate(){
+            var usr=document.getElementById("uname").value;
+            var pass=document.getElementById("pass").value;
+            if(usr==""){
+                alert("Enter userName");
+                document.myform.uname.focus();
+                return false;
+            }else  if(pass==""){
+                alert("Enter Password");
+                document.myform.pass.focus();
+                return false;
+            }else{
+               var usrs=JSON.parse(localStorage.getItem("users"))||[];
+               var userExists = usrs.some(user => user.username === usr && user.password === pass);
+
+                if(userExists){
+                    alert("Sucessfullyy loggedd inn !!")
+                    sessionStorage.setItem("isLoggedIn","true")
+                    window.location.href="home.html"
+                    return true;
+                }else{
+                    alert("Incorrect credentials.....!");
+                    return false;
+                }
+                }
+        }
+
+    </script>
+</body>
+</html>
